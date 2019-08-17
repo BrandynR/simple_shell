@@ -4,11 +4,11 @@
  * @argc: number of arguements
  * @argv: arguement
  * @envp: program’s environment
- * Return:
+ * Return: 0
  */
 int main(int argc, char *argv[], char *envp[])
 {
-	loop = read line -> get_line
-		parse -> strtok
-		execute -> execue
+	loop();
+
+	return (0);
 }
