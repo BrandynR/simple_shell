@@ -1,25 +1,29 @@
 #include "shell.h"
+#include <stdio.h>
 /**
  * loop - loop through
  * Return: void
  */
+
 void loop(void)
 {
-	char *line;
-	char **args;
+	ssize_t line;
+	/*char **args;*/
 	int status;
-
-	do {
-		printf("%s" getcwd);
-		line = getline(Hello, World);
-		args = strtok(line);
-		status = execve(args);
-
-		free(line);
-		free(args);
-	}
-	while
+	char *buff;
+	size_t BUFSIZE = 1024;
+	buff = malloc(BUFSIZE);
+	do
 	{
-		(status);
+		write(1, "$ ", 2);
+		line = getline(&buff, &BUFSIZE, stdin);
+		/* check line if getline fails */
+		/*args = strtok(line);
+		status = execve(args);
+		free(line);
+		free(args);*/
+		write(1, buff, line);
 	}
+	while (status);
+	free(buff);
 }
