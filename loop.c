@@ -1,5 +1,5 @@
 #include "shell.h"
-#include <stdio.h>
+#include <string.h>
 /**
  * loop - loop through
  * Return: void
@@ -11,6 +11,7 @@ void loop(void)
 	/*char **args;*/
 	int status;
 	char *buff;
+	char *token;
 	size_t BUFSIZE = 1024;
 	buff = malloc(BUFSIZE);
 	do
@@ -24,6 +25,8 @@ void loop(void)
 			free (buff);
 			exit (EXIT_SUCCESS);
 		}
+		token = strtok(buff, " ");
+		write(1, token, strlen(token));
 		/* check line if getline fails */
 		/*args = strtok(line);
 		status = execve(args);
