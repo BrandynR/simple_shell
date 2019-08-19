@@ -26,13 +26,18 @@ void loop(void)
 			exit (EXIT_SUCCESS);
 		}
 		token = strtok(buff, " ");
-		write(1, token, strlen(token));
+		while(token != NULL)
+		{
+		write(1, token,_strlen(token));
+		token = strtok(NULL, " ");
+		write(1, "\n", 2);
+		}
 		/* check line if getline fails */
 		/*args = strtok(line);
 		status = execve(args);
 		free(line);
 		free(args);*/
-		write(1, buff, line);
+		/*write(1, buff, line)*/;
 	}
 	while (status);
 	free(buff);
