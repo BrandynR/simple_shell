@@ -16,7 +16,14 @@ void loop(void)
 	do
 	{
 		write(1, "$ ", 2);
+		/*
+		  line = read_input(buff); */
 		line = getline(&buff, &BUFSIZE, stdin);
+		if (strcmp (buff, "exit\n") == 0)
+		{
+			free (buff);
+			exit (EXIT_SUCCESS);
+		}
 		/* check line if getline fails */
 		/*args = strtok(line);
 		status = execve(args);
