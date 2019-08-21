@@ -6,9 +6,16 @@
  * @envp: program’s environment
  * Return: 0
  */
-int main(int argc, char *argv[], char *envp[])
+int main(int argc, char *argv[], char **envp)
 {
-	loop();
+	int i = 0;
+	while(*envp)
+	{
+		printf("%s",*envp);
+		printf("\n");
+		*envp++;
+	}
 
-	return (0);
+	loop();
+	return(0);
 }
