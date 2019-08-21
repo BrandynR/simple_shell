@@ -30,7 +30,6 @@ void loop(void)
 		{
 		write(1, token,_strlen(token));
 		token = strtok(NULL, " ");
-		write(1, "\n", 2);
 		}
 		/* check line if getline fails */
 		/*args = strtok(line);
