@@ -1,43 +1,40 @@
 #include "shell.h"
-#include <string.h>
 /**
- * loop - loop through
+ * loop - function to get user input, tokonize directory and
+ * check for builtins
+ * Description: main loop to initiate shell
  * Return: void
  */
-
-void loop(void)
+void loop(char **env)
 {
-	ssize_t line;
-	/*char **args;*/
-	int status;
-	char *buff;
-	char *token;
-	size_t BUFSIZE = 1024;
-	buff = malloc(BUFSIZE);
-	do
+	char *line;
+	char **dir, **command;
+	char *combine;
+
+	while (1)
 	{
-		write(1, "$ ", 2);
-		/*
-		  line = read_input(buff); */
-		line = getline(&buff, &BUFSIZE, stdin);
-		if (_strcmp (buff, "exit\n") == 0)
+		/*Write prompt, get user input*/
+		prompt();
+		signal(SIGINT, handler);
+		line = get_line();
+		if (line[0] == '\n')
 		{
-			free (buff);
-			exit (EXIT_SUCCESS);
+			free(line);
+			continue;
 		}
-		token = strtok(buff, " ");
-		while(token != NULL)
-		{
-		write(1, token,_strlen(token));
-		token = strtok(NULL, " ");
-		}
-		/* check line if getline fails */
-		/*args = strtok(line);
-		status = execve(args);
-		free(line);
-		free(args);*/
-		/*write(1, buff, line)*/;
+		/* Pass the command to be tokenized,
+		   Split the directories into tokens,
+		   Concat directory and input,
+		   Check builtins */
+		command = split_line(line);
+		dir = dirTok(env);
+		combine = checkPath(dir, command[0]);
+		checkBuiltins(combine, command);
+		if (!combine)
+			perror(combine);
 	}
-	while (status);
-	free(buff);
+	free(line);
+	free(command);
+	free(dir);
+	free(combine);
 }
