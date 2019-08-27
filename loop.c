@@ -1,8 +1,8 @@
 #include "shell.h"
 /**
  * loop - function to get user input, tokonize directory and
- * check for builtins
- * Description: main loop to initiate shell
+ * check for builtins. Main loop to initiate shell
+ * @env: double pointer
  * Return: void
  */
 void loop(char **env)
@@ -22,10 +22,12 @@ void loop(char **env)
 			free(line);
 			continue;
 		}
-		/* Pass the command to be tokenized,
-		   Split the directories into tokens,
-		   Concat directory and input,
-		   Check builtins */
+		/**
+		 * Pass the command to be tokenized,
+		 * Split the directories into tokens,
+		 * Concat directory and input,
+		 *  Check builtins
+		 */
 		command = split_line(line);
 		dir = dirTok(env);
 		combine = checkPath(dir, command[0]);
