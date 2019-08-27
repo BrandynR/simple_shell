@@ -40,7 +40,7 @@ char *pathCat(char *dir, char *input)
 char *get_env(char **env)
 {
 	int i, k, len;
-	char *str = "PATH";
+	char *str = "PATH=";
 	char *start, *buf;
 
 	i = 0;
@@ -116,6 +116,9 @@ char *checkPath(char **dir, char *command)
 {
 	struct stat st;
 	char *fullPath;
+
+	if (command[0] == '/')
+		return (command);
 
 	while (*dir)
 	{
