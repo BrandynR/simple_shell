@@ -26,7 +26,7 @@ char **dirTok(char **env);
 void looper(char **env);
 char *checkPath(char **dir, char *command);
 int execute(char *fullPath, char **command);
-int exitme(char **command);
+int exit_sh(char **command);
 int cd(char **command);
 int printenv(char **command);
 int checkBuiltins(char *combine, char **command);
