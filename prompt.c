@@ -5,6 +5,6 @@
  */
 void prompt(void)
 {
-	if(isatty(STDIN_FILENO))
+	if (isatty(STDIN_FILENO))
 	write(STDIN_FILENO, "$ ", 2);
 }
