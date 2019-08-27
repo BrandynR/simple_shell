@@ -58,7 +58,6 @@ int checkBuiltins(char *combine, char **command)
 	char *array[] = {"exit", "cd", "env", NULL};
 
 	typedef int (*Builtins)(char **);
-	Builtins functions[] = {&exitshell, &cd, &printenv};
 	Builtins functions[] = {&exit_sh, &cd, &printenv};
 
 	i = 0;
