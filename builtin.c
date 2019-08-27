@@ -1,10 +1,11 @@
 #include "shell.h"
 
 /**
- * exitme - function to exit from shell
+ * exitshell - function to exit from shell
  * @command: input from command
  * Return: 0 for success
  */
+
 int exit_sh(char **command)
 {
 	if (*command)
@@ -57,6 +58,7 @@ int checkBuiltins(char *combine, char **command)
 	char *array[] = {"exit", "cd", "env", NULL};
 
 	typedef int (*Builtins)(char **);
+	Builtins functions[] = {&exitshell, &cd, &printenv};
 	Builtins functions[] = {&exit_sh, &cd, &printenv};
 
 	i = 0;
