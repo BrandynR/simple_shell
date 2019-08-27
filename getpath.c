@@ -117,6 +117,13 @@ char *checkPath(char **dir, char *command)
 	struct stat st;
 	char *fullPath;
 
+/*	char tok = strtok(char *command, "/");
+	if(tok > 1);
+	execute(*fullPath, **command);
+*/
+	if (command[0] == '/')
+		return (command);
+
 	while (*dir)
 	{
 		fullPath = pathCat(*dir, command);
