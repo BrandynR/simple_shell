@@ -94,7 +94,7 @@ char **dirTok(char **env)
 
 	dir = get_env(env);
 	i = 0;
-/*tokens = malloc(sizeof(char *) * 9);*/
+	tokens = malloc(sizeof(char *) * 9);
 	tok = strtok(dir, " :");
 	while (tok != NULL)
 	{
