@@ -13,7 +13,9 @@ void loop(char **env)
 
 	while (1)
 	{
-		/*Write prompt, get user input*/
+		/**
+		 *  Write prompt, then get user input
+		 */
 		prompt();
 		signal(SIGINT, handler);
 		line = get_line();
