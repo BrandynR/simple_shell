@@ -2,9 +2,8 @@
 
 /**
  * execute - forks to child process to execute command
- * @fullPath: full directory with cmd
+ * @fullPath: full directory with command
  * @command: user input
- * Description: executes command
  * Return: status
  */
 int execute(char *fullPath, char **command)
