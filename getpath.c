@@ -7,22 +7,22 @@
  */
 char *pathCat(char *dir, char *input)
 {
-	int i, k, len, len2;
+	int i, k, len1, len2;
 	char *buf;
 
-	len = _strlen(dir);
+	len1 = _strlen(dir);
 	len2 = _strlen(input);
 
-	buf = malloc(sizeof(char) * (len + len2 + 1));
+	buf = malloc(sizeof(char) * (len1 + len2 + 1));
 
 	i = 0;
-	while (i < len)
+	while (i < len1)
 	{
 		buf[i] = dir[i];
 		i++;
 	}
 	k = 0;
-	while (i < (len + len2))
+	while (i < (len1 + len2))
 	{
 		buf[i] = input[k];
 		i++;

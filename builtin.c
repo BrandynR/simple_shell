@@ -5,7 +5,8 @@
  * @command: input from command
  * Return: 0 for success
  */
-int exitshell(char **command)
+
+int exit_sh(char **command)
 {
 	if (*command)
 		exit(1);
@@ -58,6 +59,7 @@ int checkBuiltins(char *combine, char **command)
 
 	typedef int (*Builtins)(char **);
 	Builtins functions[] = {&exitshell, &cd, &printenv};
+	Builtins functions[] = {&exit_sh, &cd, &printenv};
 
 	i = 0;
 	while (array[i] != NULL)

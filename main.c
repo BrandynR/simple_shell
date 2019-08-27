@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv, char **envp)
 {
-	loop(env);
+	loop(envp);
 
 	return (0);
 }
