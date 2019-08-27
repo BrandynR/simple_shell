@@ -10,12 +10,16 @@ int execute(char *fullPath, char **command)
 {
 	pid_t child;
 	int status = 0;
+	struct stat st;
 
 	child = fork();
 	if (child == 0)
 	{
-		status = execve(fullPath, command, NULL);
-		exit(status);
+		if (stat(fullPath, &st) == 0)
+		{
+			status = execve(fullPath, command, NULL);
+			exit(status);
+		}
 	}
 	else
 		wait(NULL);
