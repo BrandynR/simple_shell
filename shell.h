@@ -23,7 +23,6 @@ char **split_line(char *line);
 char *get_env(char **env);
 char *pathCat(char *dir, char *av);
 char **dirTok(char **env);
-
 void looper(char **env);
 char *checkPath(char **dir, char *command);
 int execute(char *fullPath, char **command);
