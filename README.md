@@ -44,7 +44,7 @@ _gcc -Wall -Werror -Wextra -pedantic *.c -o hsh_
 All files are formatted in Betty style and checked using betty-style.pl and betty-doc.pl
 All header files are guarded
 ## Example
-The shell should work like this in interactive mode:
+####The shell should work like this in interactive mode:
 *$ ./hsh*
 *($) /bin/ls*
 *hsh main.c shell.c*
@@ -52,7 +52,7 @@ The shell should work like this in interactive mode:
 *($) exit*
 *$*
 
-Also like this in non-interactive mode:
+####Also like this in non-interactive mode:
 *$ echo "/bin/ls" | ./hsh*
 *hsh main.c shell.c test_ls_2*
 *$*
