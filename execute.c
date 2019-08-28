@@ -17,7 +17,7 @@ int execute(char *fullPath, char **command)
 	{
 		if (stat(fullPath, &st) == 0)
 		{
-			status = execve(fullPath, command, NULL);
+			status = execve(fullPath, command, environ);
 			exit(status);
 		}
 	}
