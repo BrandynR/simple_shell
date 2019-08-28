@@ -38,32 +38,32 @@ Directory Name | Description
 simple_shell |A simple UNIX command interpreter
 
 ## How to compile
-gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
-_gcc -Wall -Werror -Wextra -pedantic *.c -o hsh_
+gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic<br/>
+___gcc -Wall -Werror -Wextra -pedantic *.c -o hsh___
 ## More Info
 All files are formatted in Betty style and checked using betty-style.pl and betty-doc.pl
 All header files are guarded
 ## Example
-####The shell should work like this in interactive mode:
-*$ ./hsh*
-*($) /bin/ls*
-*hsh main.c shell.c*
-*($)*
-*($) exit*
-*$*
+##### The shell should work like this in interactive mode:<br/>
+*$ ./hsh*<br/>
+*($) /bin/ls*<br/>
+*hsh main.c shell.c*<br/>
+*($)*<br/>
+*($) exit*<br/>
+*$*<br/>
 
-####Also like this in non-interactive mode:
-*$ echo "/bin/ls" | ./hsh*
-*hsh main.c shell.c test_ls_2*
-*$*
-*$ cat test_ls_2*
-*/bin/ls*
-*/bin/ls*
-*$*
-*$ cat test_ls_2 | ./hsh*
-*hsh main.c shell.c test_ls_2*
-*hsh main.c shell.c test_ls_2*
-*$*
+##### Also like this in non-interactive mode:<br/>
+*$ echo "/bin/ls" | ./hsh*<br/>
+*hsh main.c shell.c test_ls_2*<br/>
+*$*<br/>
+*$ cat test_ls_2*<br/>
+*/bin/ls*<br/>
+*/bin/ls*<br/>
+*$*<br/>
+*$ cat test_ls_2 | ./hsh*<br/>
+*hsh main.c shell.c test_ls_2*<br/>
+*hsh main.c shell.c test_ls_2*<br/>
+*$*<br/>
 
 ## Authors
 Brandyn Reindel & Osama Basheer
