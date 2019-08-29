@@ -19,11 +19,11 @@ void loop(char **env)
 		prompt();
 		signal(SIGINT, handler);
 		line = get_line();
-		if (line[0] == '\n')
-		{
-			free(line);
-			continue;
-		}
+		/* if (line[0] == '\n') */
+		/* { */
+		/* 	free(line); */
+		/* 	continue; */
+		/* } */
 		/**
 		 * Pass the command to be tokenized,
 		 * Split the directories into tokens,
@@ -37,8 +37,5 @@ void loop(char **env)
 		if (!combine)
 			perror(combine);
 	}
-	free(line);
-	free(command);
-	free(dir);
-	free(combine);
+	buffers(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 }

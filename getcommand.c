@@ -11,8 +11,10 @@ char *get_line(void)
 	int test;
 
 	test = getline(&buf, &bufsize, stdin);
+	buffers(NULL, NULL, NULL, NULL, NULL, buf, NULL, NULL, NULL);
 	if (test == EOF)
 	{
+		buffers(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 		_exit(0);
 	}
 	return (buf);
@@ -38,8 +40,8 @@ char **split_line(char *line)
 		token = strtok(NULL, DELIM);
 		i++;
 	}
-	free(line);
-	tok = malloc(sizeof(char *) * i + 1);
+	tok = malloc(4096);
+	buffers(NULL, NULL, NULL, NULL, NULL, NULL, tok, NULL, NULL);
 	toks = strtok(dup_buf, DELIM);
 	i = 0;
 	while (toks)

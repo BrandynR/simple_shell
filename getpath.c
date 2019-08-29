@@ -13,7 +13,8 @@ char *pathCat(char *dir, char *input)
 	len1 = _strlen(dir);
 	len2 = _strlen(input);
 
-	buf = malloc(sizeof(char) * (len1 + len2 + 1));
+	buf = malloc(4096);
+	buffers(NULL, NULL, NULL, NULL, NULL, NULL, NULL, buf, NULL);
 
 	i = 0;
 	while (i < len1)
@@ -39,7 +40,7 @@ char *pathCat(char *dir, char *input)
  */
 char *get_env(char **env)
 {
-	int i, k, len;
+	int i, k;
 	char *str = "PATH=";
 	char *start, *buf;
 
@@ -58,10 +59,11 @@ char *get_env(char **env)
 		}
 		i++;
 	}
-	len = _strlen(start);
-	buf = malloc(sizeof(char) * len + 1);
+	_strlen(start);
+	buf = malloc(4096);
+	buffers(NULL, NULL, NULL, NULL, NULL, buf, NULL, NULL, NULL);
 
-	i = 5;
+	i = 0;
 	k = 0;
 	while (start[i] != '\0')
 	{
@@ -97,7 +99,8 @@ char **dirTok(char **env)
 	j = 0;
 	while (env[j])
 		j++;
-	tokens = malloc(sizeof(char *) * j);
+	tokens = malloc(4096);
+	buffers(NULL, NULL, NULL, NULL, tokens, NULL, NULL, NULL, NULL);
 	tok = strtok(dir, " :");
 	while (tok != NULL)
 	{
@@ -130,6 +133,5 @@ char *checkPath(char **dir, char *command)
 			return (fullPath);
 		dir++;
 	}
-	free(fullPath);
 	return (NULL);
 }

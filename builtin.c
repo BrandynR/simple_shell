@@ -9,7 +9,10 @@
 int exit_sh(char **command)
 {
 	if (*command)
-		exit(1);
+	{
+		buffers(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+		exit(0);
+	}
 	return (0);
 }
 

@@ -31,4 +31,5 @@ int cd(char **command);
 int printenv(char **command);
 int checkBuiltins(char *combine, char **command);
 void handler(int sig);
+void buffers(char *line, char **command, char **dir, char *combine, char **tokens, char *buf, char **tok, char *buf2, char *dup);
 #endif
