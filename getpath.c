@@ -61,7 +61,7 @@ char *get_env(char **env)
 	len = _strlen(start);
 	buf = malloc(sizeof(char) * len + 1);
 
-	i = 5;
+	i = 0;
 	k = 0;
 	while (start[i] != '\0')
 	{
