@@ -19,11 +19,6 @@ void loop(char **env)
 		prompt();
 		signal(SIGINT, handler);
 		line = get_line();
-		/* if (line[0] == '\n') */
-		/* { */
-		/* 	free(line); */
-		/* 	continue; */
-		/* } */
 		/**
 		 * Pass the command to be tokenized,
 		 * Split the directories into tokens,
