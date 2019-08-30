@@ -15,7 +15,7 @@ int exit_sh(char **command)
 		buffers3(NULL, NULL);
 		buffers4(NULL, NULL);
 		buffers5(NULL);
-		exit(0);
+		exit(2);
 	}
 	return (0);
 }
