@@ -11,10 +11,15 @@ char *get_line(void)
 	int test;
 
 	test = getline(&buf, &bufsize, stdin);
-	buffers(NULL, NULL, NULL, NULL, NULL, buf, NULL, NULL, NULL);
+	buffers3(NULL, buf);
+
 	if (test == EOF)
 	{
-		buffers(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+		buffers1(NULL, NULL);
+		buffers2(NULL, NULL);
+		buffers3(NULL, NULL);
+		buffers4(NULL, NULL);
+		buffers5(NULL);
 		_exit(0);
 	}
 	return (buf);
@@ -41,7 +46,8 @@ char **split_line(char *line)
 		i++;
 	}
 	tok = malloc(4096);
-	buffers(NULL, NULL, NULL, NULL, NULL, NULL, tok, NULL, NULL);
+	buffers4(tok, NULL);
+
 	toks = strtok(dup_buf, DELIM);
 	i = 0;
 	while (toks)
