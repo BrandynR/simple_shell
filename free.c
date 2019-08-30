@@ -1,5 +1,19 @@
 #include "shell.h"
-void buffers(char *line, char **command, char **dir, char *combine, char **tokens, char *buf, char **tok, char *buf2, char *dup)
+/**
+ * buffers - free all malloced buffers
+ * @line: buffer
+ * @command: buffer
+ * @dir: buffer
+ * @combine: buffer
+ * @tokens: buffer
+ * @buf: buffer
+ * @tok: buffer
+ * @buf2: buffer
+ * @dup: buffer
+ * Return: void
+ */
+void buffers(char *line, char **command, char **dir, char *combine, char **tokens,
+ char *buf, char **tok, char *buf2, char *dup)
 {
 	static char *l;
 	static char **cmd;
