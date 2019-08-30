@@ -32,5 +32,9 @@ void loop(char **env)
 		if (!combine)
 			perror(combine);
 	}
-	buffers(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+	buffers1(NULL, NULL);
+	buffers2(NULL, NULL);
+	buffers3(NULL, NULL);
+	buffers4(NULL, NULL);
+	buffers5(NULL);
 }
