@@ -14,7 +14,7 @@ char *pathCat(char *dir, char *input)
 	len2 = _strlen(input);
 
 	buf = malloc(4096);
-	buffers(NULL, NULL, NULL, NULL, NULL, NULL, NULL, buf, NULL);
+	buffers4(NULL, buf);
 
 	i = 0;
 	while (i < len1)
@@ -41,8 +41,7 @@ char *pathCat(char *dir, char *input)
 char *get_env(char **env)
 {
 	int i, k;
-	char *str = "PATH=";
-	char *start, *buf;
+	char *start, *buf, *str = "PATH=";
 
 	i = 0;
 	while (env[i])
@@ -61,8 +60,7 @@ char *get_env(char **env)
 	}
 	_strlen(start);
 	buf = malloc(4096);
-	buffers(NULL, NULL, NULL, NULL, NULL, buf, NULL, NULL, NULL);
-
+	buffers3(NULL, buf);
 	i = 0;
 	k = 0;
 	while (start[i] != '\0')
@@ -81,7 +79,6 @@ char *get_env(char **env)
 	buf[k] = '\0';
 	return (buf);
 }
-
 /**
  * dirTok - split directories to tokens
  * @env: double pointer
@@ -100,7 +97,8 @@ char **dirTok(char **env)
 	while (env[j])
 		j++;
 	tokens = malloc(4096);
-	buffers(NULL, NULL, NULL, NULL, tokens, NULL, NULL, NULL, NULL);
+	buffers3(tokens, NULL);
+
 	tok = strtok(dir, " :");
 	while (tok != NULL)
 	{
