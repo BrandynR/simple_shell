@@ -5,7 +5,6 @@
  * @command: input from command
  * Return: 0 for success
  */
-
 int exit_sh(char **command)
 {
 	if (*command)
