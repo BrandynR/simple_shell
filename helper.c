@@ -38,7 +38,7 @@ char *_strdup(char *str)
 	for (k = 0; str[k] != '\0'; k++)
 		;
 	dup = malloc(4096);
-	buffers(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, dup);
+	buffers5(dup);
 	if (dup == NULL)
 		return (NULL);
 	for (i = 0; i <= k; i++)
